@@ -20,48 +20,48 @@ function Register_coop() {
                                     <form>
 
                                         <div className="form-outline mb-2">
-                                        <label style={{marginRight : "auto"}}>Nom de la coopérative</label>
-                                        <input type="text" id="registerName" className="form-control form-control-lg" required="required"/>
+                                        <label style={{marginRight : "auto", fontSize : "16px"}}>Nom de la coopérative</label>
+                                        <input type="text" id="registerName" className="form-control" required="required"/>
                                         </div>
 
                                         <div className="form-outline mb-2">
-                                        <label style={{marginRight : "auto"}}>Adresse</label>
-                                        <input type="text" id="registerName" className="form-control form-control-lg" required="required"/>
+                                        <label style={{marginRight : "auto", fontSize : "16px"}}>Adresse</label>
+                                        <input type="text" id="registerName" className="form-control" required="required"/>
                                         </div>
 
                                         <div className="row mb-2">
                                             <div className="col-md-6">
                                                 <div className="form-outline">
-                                                <label style={{marginRight : "auto"}}>NIF</label>
-                                                <input type="text" id="registerAddress" className="form-control form-control-lg" required="required" maxLength={10}/>
+                                                <label style={{marginRight : "auto", fontSize : "16px"}}>NIF</label>
+                                                <input type="text" id="registerAddress" className="form-control" required="required" maxLength={10}/>
                                                 </div>
                                             </div>
 
                                             <div className="col-md-6">
                                                 <div className="form-outline">
-                                                <label style={{marginRight : "auto"}}>STAT</label>
-                                                <input type="text" id="registerEmail" className="form-control form-control-lg" required="required" minLength={17} maxLength={17} />
+                                                <label style={{marginRight : "auto", fontSize : "16px"}}>STAT</label>
+                                                <input type="text" id="registerEmail" className="form-control" required="required" maxLength={17} />
                                                 </div>
                                             </div>
                                         </div>
 
                                         <div className="form-outline mb-2">
-                                        <label style={{marginRight : "auto"}}>Nom du responsable</label>
-                                        <input type="text" id="registerContact" className="form-control form-control-lg" required="required" />
+                                        <label style={{marginRight : "auto", fontSize : "16px"}}>Nom du responsable</label>
+                                        <input type="text" id="registerContact" className="form-control" required="required" />
                                         </div>
 
                                         <div className="row mb-2">
                                             <div className="col-md-6">
                                                 <div className="form-outline">
-                                                <label style={{marginRight : "auto"}}>Contact</label>
-                                                <input type="text" id="registerPass1" className="form-control form-control-lg" required="required" />
+                                                <label style={{marginRight : "auto", fontSize : "16px"}}>Contact</label>
+                                                <input type="text" id="registerPass1" className="form-control" required="required" />
                                                 </div>
                                             </div>
 
                                             <div className="col-md-6">
                                                 <div className="form-outline">
-                                                <label style={{marginRight : "auto"}}>Email</label>
-                                                <input type="email" id="registerPass2" className="form-control form-control-lg" required="required" />
+                                                <label style={{marginRight : "auto", fontSize : "16px"}}>Email</label>
+                                                <input type="email" id="registerPass2" className="form-control" required="required" />
                                                 </div>
                                             </div>
                                         </div>
@@ -69,15 +69,15 @@ function Register_coop() {
                                         <div className="row mb-4">
                                             <div className="col-md-6">
                                                 <div className="form-outline">
-                                                <label style={{marginRight : "auto"}}>Mot de passe</label>
-                                                <input type="password" id="registerPass1" className="form-control form-control-lg" required="required" />
+                                                <label style={{marginRight : "auto", fontSize : "16px"}}>Mot de passe</label>
+                                                <input type="password" id="registerPass1" className="form-control" required="required" />
                                                 </div>
                                             </div>
 
                                             <div className="col-md-6">
                                                 <div className="form-outline">
-                                                <label style={{marginRight : "auto"}}>Confirmer Mot de passe</label>
-                                                <input type="password" id="registerPass2" className="form-control form-control-lg" required="required" />
+                                                <label style={{marginRight : "auto", fontSize : "16px"}}>Confirmer Mot de passe</label>
+                                                <input type="password" id="registerPass2" className="form-control" required="required" />
                                                 </div>
                                             </div>
                                         </div>

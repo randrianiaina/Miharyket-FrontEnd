@@ -90,7 +90,7 @@ const Header = () => {
                           <a href="testimonials.html" className="nav-link text-left">Avis</a>
                         </li>
                         <li>
-                          <a href="blog.html" className="nav-link text-left">Blog</a>
+                          <Link to='/dashboard' className="nav-link text-left">Blog</Link>
                         </li>
                         <li>
                           <a href="contact.html" className="nav-link text-left">Contact</a>

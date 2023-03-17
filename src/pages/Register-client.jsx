@@ -14,49 +14,49 @@ function Register_client() {
                         <div className="col-12 col-md-9 col-lg-7 col-xl-6">
                             <div className="card space-card" style={{borderRadius : '15px'}}>
 
-                                <div className="card-body p-4">
+                                <div className="card-body"  style={{padding : "2.5em"}}>
                                 <h4 className="text-uppercase text-center mb-5">Inscription en tant que client</h4>
 
                                     <form>
 
                                         <div className="form-outline mb-4">
-                                        <label style={{marginRight : "auto"}}>Nom et prénom</label>
-                                        <input type="text" id="registerName" className="form-control form-control-lg" required="required"/>
+                                        <label style={{marginRight : "auto", fontSize : "16px"}}>Nom et prénom</label>
+                                        <input type="text" id="registerName" className="form-control" required="required"/>
                                         </div>
 
                                         <div className="row mb-4">
                                             <div className="col-md-6 pb-2">
                                                 <div className="form-outline">
-                                                <label style={{marginRight : "auto"}}>Adresse</label>
-                                                <input type="text" id="registerAddress" className="form-control form-control-lg" required="required" />
+                                                <label style={{marginRight : "auto", fontSize : "16px"}}>Adresse</label>
+                                                <input type="text" id="registerAddress" className="form-control" required="required" />
                                                 </div>
                                             </div>
 
                                             <div className="col-md-6 pb-2">
                                                 <div className="form-outline">
-                                                <label style={{marginRight : "auto"}}>Adresse mail</label>
-                                                <input type="email" id="registerEmail" className="form-control form-control-lg" required="required" />
+                                                <label style={{marginRight : "auto", fontSize : "16px"}}>Adresse mail</label>
+                                                <input type="email" id="registerEmail" className="form-control" required="required" />
                                                 </div>
                                             </div>
                                         </div>
 
                                         <div className="form-outline mb-4">
-                                        <label style={{marginRight : "auto"}}>Contact</label>
-                                        <input type="tel" id="registerContact" className="form-control form-control-lg" required="required" />
+                                        <label style={{marginRight : "auto", fontSize : "16px"}}>Contact</label>
+                                        <input type="tel" id="registerContact" className="form-control" required="required" />
                                         </div>
 
                                         <div className="row mb-4">
                                             <div className="col-md-6 pb-2">
                                                 <div className="form-outline">
-                                                <label style={{marginRight : "auto"}}>Mot de passe</label>
-                                                <input type="password" id="registerPass1" className="form-control form-control-lg" required="required" />
+                                                <label style={{marginRight : "auto", fontSize : "16px"}}>Mot de passe</label>
+                                                <input type="password" id="registerPass1" className="form-control" required="required" />
                                                 </div>
                                             </div>
 
                                             <div className="col-md-6 pb-2">
                                                 <div className="form-outline">
-                                                <label style={{marginRight : "auto"}}>Confirmer Mot de passe</label>
-                                                <input type="password" id="registerPass2" className="form-control form-control-lg" required="required" />
+                                                <label style={{marginRight : "auto", fontSize : "16px"}}>Confirmer Mot de passe</label>
+                                                <input type="password" id="registerPass2" className="form-control" required="required" />
                                                 </div>
                                             </div>
                                         </div>
