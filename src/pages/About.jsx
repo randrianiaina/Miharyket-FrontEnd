@@ -116,7 +116,7 @@ function About () {
                         </figure>
                         <div class="person-contents">
                         <h4>Ramamonjison Vonintsoa</h4>
-                        <span class="position">Développeur</span>
+                        <span class="position">Développeuse</span>
                         </div>
                     </div>
                     </div>
