@@ -12,6 +12,7 @@ import {
 }
 from 'mdb-react-ui-kit';
 import Register from './Register';
+import { Auth0Provider } from '@auth0/auth0-react';
 
 function Login () {
   let navigate = useNavigate()
@@ -42,22 +43,22 @@ function Login () {
 
                         <div className='d-flex flex-row'>
                           <MDBBtn tag='a' color='none' className='m-3' style={{ color: 'white' }}>
-                            <MDBIcon fab icon='facebook-f' size="lg" style={{cursor : "pointer"}}/>
+                            <MDBIcon fab icon='facebook-f' size='lg' style={{cursor : "pointer"}}/>
                           </MDBBtn>
 
                           <MDBBtn tag='a' color='none' className='m-3' style={{ color: 'white' }}>
-                            <MDBIcon fab icon='twitter' size="lg" style={{cursor : "pointer"}}/>
+                            <MDBIcon fab icon='twitter' size='lg' style={{cursor : "pointer"}}/>
                           </MDBBtn>
 
                           <MDBBtn tag='a' color='none' className='m-3' style={{ color: 'white' }}>
-                            <MDBIcon fab icon='google' size="lg" style={{cursor : "pointer"}}/>
+                            <MDBIcon fab icon='google' size='lg' style={{cursor : "pointer"}}/>
                           </MDBBtn>
                         </div>
 
                         <label style={{marginRight : "auto"}}>Adresse mail</label>
-                        <MDBInput className='input' wrapperClass='mb-4 mx-5 w-100' type='email' size="lg" placeholder='Entrez votre email' required/>
+                        <MDBInput className='input' wrapperClass='mb-4 mx-5 w-100' type='email' size='lg' placeholder='Entrez votre email' required/>
                         <label style={{marginRight : "auto"}}>Mot de passe</label>
-                        <MDBInput className='input' wrapperClass='mb-4 mx-5 w-100' type='password' size="lg" placeholder='Entrez votre mot de passe' required/>
+                        <MDBInput className='input' wrapperClass='mb-4 mx-5 w-100' type='password' size='lg' placeholder='Entrez votre mot de passe' required/>
 
                         <p className="mb-3 pb-lg-2"><a className="text-white" href="#!" data-aos="fade-right">Mot de passe oublié?</a></p>
                         <div className="text-center" data-aos="fade-right">
