@@ -93,3 +93,7 @@ button.btn.btn-success.btn-rounded.btn-lg.gradient-custom-4.px-5.text-white {
 Link {
   color: white;
 }
+
+.bottom {
+  margin-bottom: 32px;
+}
