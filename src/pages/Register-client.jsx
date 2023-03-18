@@ -1,13 +1,41 @@
 import { Link, Route, Routes, useNavigate } from 'react-router-dom';
 import Login from './Login';
-import React from 'react';
+import Home from './Home'
+import React, { useState } from 'react';
 
 function Register_client() {
+    const [nomUtilisateur, setLName] = useState('')
+    const [prenomUtilisateur, setFName] = useState('')
+    const [adresseUtilisateur, setAdress] = useState('')
+    const [email, setEmail] = useState('')
+    const [telephoneUtilisateur, setPhone] = useState('')
+    const [mdpUtilisateur, setPass] = useState('')
+    const [login, setLogin] = useState('')
+    const [typeUtilisateur] = useState('CLIENT')
+    const navigate = useNavigate()
+
+    const handleClick = (e) => {
+        e.preventDefault()
+        const user = {nomUtilisateur, login : email, prenomUtilisateur, adresseUtilisateur, email, telephoneUtilisateur, mdpUtilisateur, typeUtilisateur}
+        fetch("http://localhost:8085/api/utilisateurs/ajout", {
+            method:"POST", headers:{"Content-Type" : "application/json"}, body:JSON.stringify(user)
+        }).then(() => {
+            console.log("Ajouté")
+            navigate('/')
+            window.location.reload(true)
+        })
+        console.log(user)
+    }
+
+    const refresh = () => {
+        navigate('/inscription')
+        window.location.reload(true)
+    }
     return (
         <div>
         <title>Mihary'ket - Inscription client</title>
         <section className="vh-100 bg-image"
-            style={{backgroundImage : "url(/src/images/hero_6.jpg)", overflowY : "hidden"}}>
+            style={{backgroundImage : "url(/src/images/hero_6.jpg)"}}>
             <div className="mask d-flex align-items-center h-100 gradient-custom-3">
                 <div className="container h-100">
                     <div className="row d-flex justify-content-center align-items-center h-100 go-right" data-aos="fade-up">
@@ -19,44 +47,61 @@ function Register_client() {
 
                                     <form>
 
-                                        <div className="form-outline mb-4">
-                                        <label style={{marginRight : "auto", fontSize : "16px"}}>Nom et prénom</label>
-                                        <input type="text" id="registerName" className="form-control" required="required"/>
+                                        <div className="row mb-4">
+                                            <div className="col-md-6 pb-2">
+                                                <div className="form-outline">
+                                                <label style={{marginRight : "auto", fontSize : "16px"}}>Nom</label>
+                                                <input type="text" id="registerLName" className="form-control" required="required"
+                                                value={nomUtilisateur} onChange={(e) => setLName(e.target.value)}/>
+                                                </div>
+                                            </div>
+
+                                            <div className="col-md-6 pb-2">
+                                                <div className="form-outline">
+                                                <label style={{marginRight : "auto", fontSize : "16px"}}>Prénom</label>
+                                                <input type="text" id="registerFName" className="form-control" required="required"
+                                                value={prenomUtilisateur} onChange={(e) => setFName(e.target.value)}/>
+                                                </div>
+                                            </div>
                                         </div>
 
                                         <div className="row mb-4">
                                             <div className="col-md-6 pb-2">
                                                 <div className="form-outline">
                                                 <label style={{marginRight : "auto", fontSize : "16px"}}>Adresse</label>
-                                                <input type="text" id="registerAddress" className="form-control" required="required" />
+                                                <input type="text" id="registerAddress" className="form-control" required="required"
+                                                value={adresseUtilisateur} onChange={(e) => setAdress(e.target.value)}/>
                                                 </div>
                                             </div>
 
                                             <div className="col-md-6 pb-2">
                                                 <div className="form-outline">
                                                 <label style={{marginRight : "auto", fontSize : "16px"}}>Adresse mail</label>
-                                                <input type="email" id="registerEmail" className="form-control" required="required" />
+                                                <input type="email" id="registerEmail" className="form-control" required="required"
+                                                value={email} onChange={(e) => setEmail(e.target.value)}/>
                                                 </div>
                                             </div>
                                         </div>
 
                                         <div className="form-outline mb-4">
                                         <label style={{marginRight : "auto", fontSize : "16px"}}>Contact</label>
-                                        <input type="tel" id="registerContact" className="form-control" required="required" />
+                                        <input type="tel" id="registerContact" className="form-control" required="required"
+                                        value={telephoneUtilisateur} onChange={(e) => setPhone(e.target.value)}/>
                                         </div>
 
                                         <div className="row mb-4">
                                             <div className="col-md-6 pb-2">
                                                 <div className="form-outline">
                                                 <label style={{marginRight : "auto", fontSize : "16px"}}>Mot de passe</label>
-                                                <input type="password" id="registerPass1" className="form-control" required="required" />
+                                                <input type="password" id="registerPass1" className="form-control" required="required"
+                                                value={mdpUtilisateur} onChange={(e) => setPass(e.target.value)}/>
                                                 </div>
                                             </div>
 
                                             <div className="col-md-6 pb-2">
                                                 <div className="form-outline">
                                                 <label style={{marginRight : "auto", fontSize : "16px"}}>Confirmer Mot de passe</label>
-                                                <input type="password" id="registerPass2" className="form-control" required="required" />
+                                                <input type="password" id="registerPass2" className="form-control" required="required"/>
                                                 </div>
                                             </div>
                                         </div>
@@ -70,11 +115,17 @@ function Register_client() {
 
                                         <div className="d-flex justify-content-center">
                                         <button type="button"
-                                            className="btn btn-success btn-rounded btn-lg gradient-custom-4 px-5 text-white">S'inscrire</button>
+                                            className="btn btn-success btn-rounded btn-lg gradient-custom-4 px-5 text-white"
+                                            onClick={handleClick}
+                                            >S'inscrire</button>
                                         </div>
 
-                                        <p className="text-center text-muted mt-5 mb-0">Déjà inscrit? <Link id="loginLink" to="/authentification"
-                                            className="fw-bold text-body">Se connecter</Link></p>
+                                        <p className="text-center text-muted mt-4 mb-0">Déjà inscrit? <Link id="loginLink" to="/authentification"
+                                            className="text-primary fw-bold">Se connecter</Link></p>
+
+                                        <div className="text-center text-muted mt-4 mb-0" style={{marginLeft : '2%', marginTop : '2%'}}>
+                                            <Link className="text-muted fw-bold" onClick={refresh}>Retour</Link>
+                                        </div>
 
                                     </form>
 
@@ -88,6 +139,7 @@ function Register_client() {
 
         <Routes>
           <Route to="/authentification/*" element={<Login />}/>
+          <Route to="/" element={<Home />}/>
         </Routes>
       </div>
     )

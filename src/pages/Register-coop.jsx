@@ -1,8 +1,13 @@
-import { Link, Route, Routes } from 'react-router-dom';
+import { Link, Route, Routes, useNavigate } from 'react-router-dom';
 import Login from './Login';
 import React from 'react';
 
 function Register_coop() {
+    const navigate = useNavigate()
+    const refresh = () => {
+        navigate('/inscription')
+        window.location.reload(true)
+    }
     return (
         <div>
         <title>Mihary'ket - Inscription coopérative</title>
@@ -96,6 +101,10 @@ function Register_coop() {
 
                                         <p className="text-center text-muted mt-5 mb-0">Déjà inscrit? <Link id="loginLink" to="/authentification"
                                             className="fw-bold text-body">Se connecter</Link></p>
+
+                                        <div className="text-center text-muted mt-4 mb-0" style={{marginLeft : '2%', marginTop : '2%'}}>
+                                            <Link className="text-muted fw-bold" onClick={refresh}>Retour</Link>
+                                        </div>
 
                                     </form>
 
