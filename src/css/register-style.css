@@ -78,3 +78,7 @@ background: linear-gradient(to bottom, rgba(17, 101, 48, 1), rgba(17, 101, 48, 1
         border-top-right-radius: 15px;
     }
 }
+
+.mask.d-flex.align-items-center.h-100.gradient-custom-3 {
+    overflow-x: hidden;
+}
