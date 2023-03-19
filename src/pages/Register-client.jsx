@@ -2,6 +2,8 @@ import { Link, Route, Routes, useNavigate } from 'react-router-dom';
 import Login from './Login';
 import Home from './Home'
 import React, { useState } from 'react';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css'
 
 function Register_client() {
     const [nomUtilisateur, setLName] = useState('')
@@ -16,15 +18,27 @@ function Register_client() {
 
     const handleClick = (e) => {
         e.preventDefault()
-        const user = {nomUtilisateur, login : email, prenomUtilisateur, adresseUtilisateur, email, telephoneUtilisateur, mdpUtilisateur, typeUtilisateur}
-        fetch("http://localhost:8085/api/utilisateurs/ajout", {
-            method:"POST", headers:{"Content-Type" : "application/json"}, body:JSON.stringify(user)
-        }).then(() => {
-            console.log("Ajouté")
-            navigate('/')
-            window.location.reload(true)
-        })
-        console.log(user)
+        if (validate()) {
+            const user = {nomUtilisateur, login : email, prenomUtilisateur, adresseUtilisateur, email, telephoneUtilisateur, mdpUtilisateur, typeUtilisateur}
+            fetch("http://localhost:8085/api/utilisateurs/ajout", {
+                method:"POST", headers:{"Content-Type" : "application/json"}, body:JSON.stringify(user)
+            }).then(() => {
+                navigate('/')
+                window.location.reload(true)
+            }).catch((err) => {
+                toast.error('Inscription échouée : ' +err.message)
+            })
+            console.log(user)
+        }
+    }
+
+    const validate = () => {
+        let result = true
+        if (nomUtilisateur === '' || nomUtilisateur === null) {
+            result = false
+            toast.warning('Veuillez entrer votre nom')
+        }
+        return result
     }
 
     const refresh = () => {
@@ -107,10 +121,10 @@ function Register_client() {
                                         </div>
 
                                         {/* <div className="form-check d-flex justify-content-center mb-5" data-aos="fade-up">
-                                        <input className="form-check-input" type="checkbox" value="" id="flexCheckDefault" checked />
-                                        <label className="form-check-label" for="flexCheckDefault">
-                                            J'ai lu et accepté les <a href="#!" className="text-body"><u>Termes et conditions d'utilisation</u></a>
-                                        </label>
+                                            <input className="form-check-input" type="checkbox" value="" id="flexCheckDefault" checked />
+                                            <label className="form-check-label" for="flexCheckDefault">
+                                                J'ai lu et accepté les <a href="#!" className="text-body"><u>Termes et conditions d'utilisation</u></a>
+                                            </label>
                                         </div> */}
 
                                         <div className="d-flex justify-content-center">
@@ -118,6 +132,7 @@ function Register_client() {
                                             className="btn btn-success btn-rounded btn-lg gradient-custom-4 px-5 text-white"
                                             onClick={handleClick}
                                             >S'inscrire</button>
+                                            <ToastContainer />
                                         </div>
 
                                         <p className="text-center text-muted mt-4 mb-0">Déjà inscrit? <Link id="loginLink" to="/authentification"
